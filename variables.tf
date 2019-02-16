@@ -12,6 +12,8 @@ variable "owner" {}
 
 variable "ttl" {}
 
+variable "my_ip" {}
+
   
 
 
