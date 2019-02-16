@@ -50,7 +50,7 @@ ingress {
       from_port = 23000
       to_port = 23100
       protocol = "tcp"
-      cidr_blocks = ["${aws_security_group.secgroup.id}"]
+      cidr_blocks = ["11.0.0.0/16"]
   }
 tags {
     Name = "ptfe-containers-internal"
@@ -59,7 +59,7 @@ ingress {
       from_port = 9870
       to_port = 9880
       protocol = "tcp"
-      cidr_blocks = ["${aws_security_group.secgroup.id}"]
+      cidr_blocks = ["11.0.0.0/16"]
   }
 tags {
     Name = "ptfe-containers-internal"
