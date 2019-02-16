@@ -13,7 +13,7 @@ resource "aws_security_group" "secgroup" {
       from_port = 22
       to_port = 22
       protocol = "tcp"
-      cidr_blocks = ["98.228.185.91/32"]
+      cidr_blocks = ["${var.my_ip}"]
   } 
 tags {
     Name = "allow-ssh from my laptop"
