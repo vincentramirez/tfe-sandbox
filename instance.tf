@@ -6,7 +6,11 @@ resource "aws_instance" "ec2_vm" {
   count = "1"
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
-  volume_size   = "${var.instance_size}"
+  root_block_device {
+  #volume_type = "gp2"
+  volume_size = "${var.instance_size}"
+  delete_on_termination = "true"
+  } 
   # the VPC subnet
   subnet_id = "${aws_subnet.subnet-public-1a.id}"
 
