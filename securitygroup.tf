@@ -41,7 +41,7 @@ tags {
       from_port = 8800
       to_port = 8800
       protocol = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["${var.my_ip}"]
   }
 tags {
     Name = "pTFE Admin"
