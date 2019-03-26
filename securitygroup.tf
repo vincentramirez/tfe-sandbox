@@ -16,54 +16,19 @@ resource "aws_security_group" "secgroup" {
       cidr_blocks = ["${var.my_ip}"]
   } 
 tags {
-    Name = "allow-ssh from my laptop"
+    Name = "allow-ssh from trusted ip or CIDR"
   }
 
   ingress {
-      from_port = 80
-      to_port = 80
-      protocol = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      from_port = 0
+      to_port = 0
+      protocol = "-1"
+      cidr_blocks = ["${var.secgroup}"]
   }
 tags {
-    Name = "allow-HTTP"
+    Name = "allow-all from SG"
   } 
-  ingress {
-      from_port = 443
-      to_port = 443
-      protocol = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-  }
-tags {
-    Name = "allow-https"
-  } 
-  ingress {
-      from_port = 8800
-      to_port = 8800
-      protocol = "tcp"
-      cidr_blocks = ["${var.my_ip}"]
-  }
-tags {
-    Name = "pTFE Admin"
-  } 
-ingress {
-      from_port = 23000
-      to_port = 23100
-      protocol = "tcp"
-      cidr_blocks = ["11.0.0.0/16"]
-  }
-tags {
-    Name = "ptfe-containers-internal"
-  } 
-ingress {
-      from_port = 9870
-      to_port = 9880
-      protocol = "tcp"
-      cidr_blocks = ["11.0.0.0/16"]
-  }
-tags {
-    Name = "ptfe-containers-internal"
-  } 
+ 
 
   
 }
