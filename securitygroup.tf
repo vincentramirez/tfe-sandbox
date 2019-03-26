@@ -23,7 +23,7 @@ tags {
       from_port = 0
       to_port = 0
       protocol = "-1"
-      cidr_blocks = ["${var.secgroup}"]
+      cidr_blocks = ["${aws_security_group.secgroup.id}"]
   }
 tags {
     Name = "allow-all from SG"
