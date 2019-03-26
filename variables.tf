@@ -16,6 +16,8 @@ variable "ttl" {}
 
 variable "my_ip" {}
 
+variable "count" {}
+
   
 
 
