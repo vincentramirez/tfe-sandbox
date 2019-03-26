@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2_vm" {
-  count = "1"
+  count = "${var.count}"
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
   root_block_device {
