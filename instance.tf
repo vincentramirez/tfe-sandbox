@@ -28,6 +28,7 @@ resource "aws_instance" "ec2_vm" {
     Name = "ec2-${count.index}-${var.environment_name}"
     owner = "${var.owner}"
     TTL = "${var.ttl}"
+    Test = "tag"
   }
 }
                   
